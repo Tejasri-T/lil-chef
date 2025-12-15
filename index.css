@@ -1,0 +1,304 @@
+/* ----------------------------- */
+/* GLOBAL THEME                  */
+/* ----------------------------- */
+
+* {
+    box-sizing: border-box;
+    transition: 0.2s ease;
+}
+
+:root {
+    --bg: #FFF7F0;           /* soft warm background */
+    --primary: #FF6B35;      /* tomato red / accent */
+    --secondary: #FF9E1B;    /* bright orange / button highlight */
+    --card-bg: #FFFFFF;       /* white cards */
+    --text: #3A3A3A;          /* dark gray text */
+    --muted: #7A7A7A;         /* muted text */
+    --radius: 16px;
+    --shadow: 0px 5px 15px rgba(0,0,0,0.08);
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* ----------------------------- */
+/* HEADER — Floating Gradient     */
+/* ----------------------------- */
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    height: 110px;
+    margin: 0px 0px 50px;
+
+    /* Inner background: soft white gradient */
+    background: linear-gradient(to right, #ffffff, #fff7f0, #ffffff);
+    border-radius: 20px;
+
+    /* Only bottom border with gradient orange */
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 3px solid;
+    border-image: linear-gradient(to right, #FF9E1B, #FF6B35) 1;
+
+    /* 3D / floating effect */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12), 0 4px 10px rgba(0,0,0,0.08);
+
+    /* Sticky on top */
+    /* position: sticky;
+    top: 10px;
+    z-index: 10; */
+
+    padding: 0 24px;
+}
+
+
+header img {
+    float: left;
+    width: 400px;
+    height: 100px;
+}
+
+header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* ----------------------------- */
+/* MAIN LAYOUT                   */
+/* ----------------------------- */
+
+main {
+    padding: 32px 28px 20px;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+/* ----------------------------- */
+/* INGREDIENT INPUT FORM         */
+/* ----------------------------- */
+
+.add-ingredient-form {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.add-ingredient-form input {
+    flex-grow: 1;
+    padding: 12px 16px;
+    border-radius: var(--radius);
+    border: 2px solid var(--secondary);
+    background: #FFF;
+    font-size: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.add-ingredient-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.add-ingredient-form button {
+    border: none;
+    border-radius: var(--radius);
+    background: var(--secondary);
+    color: white;
+    font-weight: 600;
+    padding: 12px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    box-shadow: var(--shadow);
+    size: fit-content;
+    padding: 10px 14px 10px 14px;
+
+}
+
+.add-ingredient-form button:hover {
+    background: var(--primary);
+}
+
+.add-ingredient-form button::before {
+    content: "+ ";
+    
+}
+
+/* ----------------------------- */
+/* INGREDIENTS LIST              */
+/* ----------------------------- */
+
+.ingredients-list {
+    padding-left: 20px;
+    margin-bottom: 40px;
+}
+
+.ingredients-list li {
+    margin-bottom: 6px;
+    font-size: 1.05rem;
+    position: relative;
+}
+
+.ingredients-list li::before {
+    margin-right: 8px;
+}
+
+/* ----------------------------- */
+/* GET RECIPE CARD               */
+/* ----------------------------- */
+
+.get-recipe-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 18px 26px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 2px solid var(--secondary);
+}
+
+.get-recipe-container h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.get-recipe-container p {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.get-recipe-container button {
+    border: none;
+    border-radius: var(--radius);
+    background: var(--primary);
+    color: white;
+    font-weight: 600;
+    padding: 10px 18px;
+    cursor: pointer;
+}
+
+.get-recipe-container button:hover {
+    transform: scale(1.05);
+}
+
+/* ----------------------------- */
+/* SUGGESTED RECIPE CARD         */
+/* ----------------------------- */
+
+.suggested-recipe-container {
+    margin-top: 35px;
+    padding: 24px 28px;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    border: 2px solid var(--secondary);
+    box-shadow: var(--shadow);
+}
+
+.suggested-recipe-container h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 16px;
+}
+
+.suggested-recipe-container ul li,
+.suggested-recipe-container ol li {
+    margin-bottom: 10px;
+    padding-left: 4px;
+}
+
+
+.header-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-controls select,
+.header-controls input {
+    padding: 8px 12px;
+    border-radius: 12px;
+    border: 1px solid #FF9E1B;
+    background: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.header-controls input {
+    width: 165px;
+    text-align: center;
+}
+
+.header-controls input::placeholder {
+    color: black;
+}
+
+.header-controls input:hover{
+    border-color: var(--primary);
+}
+
+.header-controls select:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.ingredients-list {
+    list-style: none;
+    padding: 10px 8px;
+    margin-bottom: 40px;
+
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    border: 1.5px solid var(--secondary);
+    box-shadow: var(--shadow);
+}
+
+/* Individual list items */
+.ingredients-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    
+    /* padding: 8px 4px; */
+    font-size: 1rem;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+/* Remove divider from last item */
+.ingredients-list li:last-child {
+    border-bottom: none;
+}
+
+/* Ingredient text */
+.ingredients-list li span {
+    color: var(--text);
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* Remove button — subtle */
+.ingredients-list li button {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 0.85rem;
+    font-weight: 560;
+    cursor: pointer;
+    padding: 4px 6px;
+}
+
+.ingredients-list li button:hover {
+    color: var(--primary);
+}
