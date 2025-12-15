@@ -1,4 +1,4 @@
-# 🍳 AI Recipe Generator
+# 🍳 Lil chef
 
 A clean, minimal React application that helps users generate recipe ideas based on the ingredients they already have. The app focuses on **simplicity**, **logical ingredient handling**, and **realistic serving sizes**, while maintaining a warm, distraction-free UI.
 
